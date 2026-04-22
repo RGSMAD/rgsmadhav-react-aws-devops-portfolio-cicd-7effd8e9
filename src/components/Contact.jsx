@@ -39,11 +39,14 @@ const Contact = () => {
 
     setSending(true);
     try {
-      const { error } = await supabase.functions.invoke("send-contact-message", {
-        body: { name, email, message },
-      });
+      const { error } = await supabase
+        .from("contact_messages")
+        .insert({ name, email, message });
       if (error) throw error;
-      toast({ title: "Message sent!", description: "I'll get back to you within 24 hours." });
+      toast({
+        title: "Message sent!",
+        description: "Thanks for reaching out — I'll get back to you within 24 hours.",
+      });
       setForm({ name: "", email: "", message: "" });
     } catch (err) {
       console.error(err);
