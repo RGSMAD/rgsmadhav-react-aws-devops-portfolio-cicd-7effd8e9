@@ -13,7 +13,7 @@ import AssetUploader from "@/components/AssetUploader";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Navbar />
       <main>
         <Hero />
