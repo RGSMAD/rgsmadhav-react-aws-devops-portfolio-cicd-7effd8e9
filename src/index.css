@@ -112,39 +112,38 @@
   body {
     @apply text-foreground font-sans antialiased;
     font-feature-settings: "cv11", "ss01";
-    /* AWS-console-style chameleon background — slowly cycles through soft tints */
     background-color: hsl(var(--background));
     background-image:
-      radial-gradient(at 15% 20%, hsl(var(--chameleon-a) / 0.55) 0px, transparent 55%),
-      radial-gradient(at 85% 15%, hsl(var(--chameleon-b) / 0.45) 0px, transparent 55%),
-      radial-gradient(at 75% 85%, hsl(var(--chameleon-c) / 0.50) 0px, transparent 55%),
-      radial-gradient(at 20% 80%, hsl(var(--chameleon-d) / 0.45) 0px, transparent 55%);
+      radial-gradient(60% 50% at 15% 18%, hsl(var(--chameleon-a) / 0.85) 0%, transparent 70%),
+      radial-gradient(55% 45% at 85% 12%, hsl(var(--chameleon-b) / 0.80) 0%, transparent 70%),
+      radial-gradient(60% 50% at 80% 80%, hsl(var(--chameleon-c) / 0.85) 0%, transparent 70%),
+      radial-gradient(55% 45% at 15% 85%, hsl(var(--chameleon-d) / 0.80) 0%, transparent 70%);
     background-attachment: fixed;
-    animation: chameleon 30s ease-in-out infinite;
+    background-repeat: no-repeat;
+    animation: chameleon 18s ease-in-out infinite;
   }
   h1, h2, h3, h4 { @apply font-display; }
 
-  /* Chameleon hue variables (light mode) */
   :root {
-    --chameleon-a: 270 90% 90%;
-    --chameleon-b: 24 95% 88%;
-    --chameleon-c: 200 85% 88%;
-    --chameleon-d: 150 70% 88%;
+    --chameleon-a: 270 95% 82%;
+    --chameleon-b: 24 100% 78%;
+    --chameleon-c: 200 95% 78%;
+    --chameleon-d: 150 80% 78%;
   }
   .dark {
-    --chameleon-a: 270 60% 25%;
-    --chameleon-b: 24 70% 25%;
-    --chameleon-c: 200 65% 22%;
-    --chameleon-d: 150 50% 20%;
+    --chameleon-a: 270 70% 35%;
+    --chameleon-b: 24 80% 35%;
+    --chameleon-c: 200 75% 32%;
+    --chameleon-d: 150 60% 30%;
   }
 }
 
 @keyframes chameleon {
-  0%   { filter: hue-rotate(0deg); }
-  25%  { filter: hue-rotate(40deg); }
-  50%  { filter: hue-rotate(-30deg); }
-  75%  { filter: hue-rotate(20deg); }
-  100% { filter: hue-rotate(0deg); }
+  0%   { filter: hue-rotate(0deg) saturate(1); }
+  25%  { filter: hue-rotate(60deg) saturate(1.1); }
+  50%  { filter: hue-rotate(-50deg) saturate(1.15); }
+  75%  { filter: hue-rotate(35deg) saturate(1.05); }
+  100% { filter: hue-rotate(0deg) saturate(1); }
 }
 
 @layer components {
