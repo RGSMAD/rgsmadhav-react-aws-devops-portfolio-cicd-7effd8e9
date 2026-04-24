@@ -67,7 +67,7 @@ const ProjectCard = ({ p }) => {
         style={{ minHeight: "480px" }}
       >
         {/* Front */}
-        <div className={`glass-card ${p.frontTint} p-6 rounded-2xl flex flex-col hover:shadow-glow transition-all hover:-translate-y-1 absolute inset-0 [backface-visibility:hidden]`}>
+        <div className="glass-card p-6 rounded-2xl flex flex-col hover:shadow-glow transition-all hover:-translate-y-1 absolute inset-0 [backface-visibility:hidden]">
           <div className="w-14 h-14 rounded-2xl bg-gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-glow">
             <p.icon className="w-7 h-7 text-primary-foreground" />
           </div>
@@ -86,7 +86,7 @@ const ProjectCard = ({ p }) => {
             <div className="grid grid-cols-3 gap-2 mb-4 pt-4 border-t border-border">
               {p.metrics.map((m) => (
                 <div key={m} className="text-center">
-                  <div className={`text-xs font-semibold ${p.accentText}`}>{m}</div>
+                  <div className="text-xs font-semibold text-primary">{m}</div>
                 </div>
               ))}
             </div>
@@ -125,17 +125,17 @@ const ProjectCard = ({ p }) => {
 
         {/* Back */}
         {hasBack && (
-          <div className={`glass-card ${p.backTint} p-6 rounded-2xl absolute inset-0 [transform:rotateY(180deg)] [backface-visibility:hidden] overflow-auto`}>
-            <h3 className="font-display font-bold text-lg mb-3">{p.title}</h3>
-            <ul className="space-y-2 text-sm text-foreground/90">
+          <div className="glass-card p-6 rounded-2xl absolute inset-0 [transform:rotateY(180deg)] [backface-visibility:hidden] overflow-auto bg-gradient-primary">
+            <h3 className="font-display font-bold text-lg text-primary-foreground mb-3">{p.title}</h3>
+            <ul className="space-y-2 text-sm text-primary-foreground/95">
               {p.details.map((d) => (
                 <li key={d} className="flex gap-2">
-                  <span className={`shrink-0 ${p.accentText}`}>▹</span>
+                  <span className="shrink-0">▹</span>
                   <span>{d}</span>
                 </li>
               ))}
             </ul>
-            <div className="mt-3 text-xs text-muted-foreground text-center">Click to flip back</div>
+            <div className="mt-3 text-xs text-primary-foreground/70 text-center">Click to flip back</div>
           </div>
         )}
       </div>
