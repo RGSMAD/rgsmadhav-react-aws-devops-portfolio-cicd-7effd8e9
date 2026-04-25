@@ -559,10 +559,11 @@ export default function Home() {
               </span>
               Open to Cloud Engineer / AWS DevOps Engineer roles
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground mb-4">
-              Rajoli Girisai Madhav
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4">
+              <span className="text-blue-600 dark:text-blue-400">Rajoli Girisai</span>{" "}
+              <span className="text-primary">Madhav</span>
             </h1>
-            <p className="text-xl md:text-2xl font-medium text-muted-foreground mb-6">
+            <p className="text-xl md:text-2xl font-medium text-black dark:text-white mb-6">
               AWS DevOps Engineer | Cloud & Infrastructure Specialist
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-xl">
