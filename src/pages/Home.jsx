@@ -666,7 +666,10 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.5 }}>
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 tracking-tight">From Mainframes to the Cloud</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 tracking-tight">
+                <span className="text-blue-600 dark:text-blue-400">From Mainframes to the</span>{" "}
+                <span className="text-primary">Cloud</span>
+              </h2>
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p>I began my career in enterprise banking systems at NTT Data, working with Mainframes (COBOL, JCL), where I learned the importance of reliability, production stability, and maintaining 99.9% uptime in mission-critical environments.</p>
                 <p>Driven by a passion for modern infrastructure, I transitioned into Cloud and DevOps. I've since designed and deployed scalable AWS architectures, implemented CI/CD pipelines, and reduced deployment times to under 15 minutes through automation.</p>
