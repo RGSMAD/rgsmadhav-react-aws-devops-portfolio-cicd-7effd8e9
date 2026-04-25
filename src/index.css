@@ -77,3 +77,43 @@
     font-family: 'Inter', sans-serif;
   }
 }
+
+/* AWS rainbow glow on hover — used for feature/skill/project/cert/contact cards */
+@layer utilities {
+  .aws-glow {
+    position: relative;
+    isolation: isolate;
+    transition: transform 0.3s ease;
+  }
+  .aws-glow::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    z-index: -1;
+    border-radius: inherit;
+    padding: 2px;
+    background: conic-gradient(
+      from 0deg,
+      #FF9900,   /* AWS orange */
+      #8C4FFF,   /* purple */
+      #00A1C9,   /* AWS teal/blue */
+      #1F8EFA,   /* azure */
+      #59BA47,   /* green */
+      #EC7211,   /* deep orange */
+      #FF9900
+    );
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 0.4s ease;
+  }
+  .aws-glow:hover::before {
+    opacity: 0.85;
+    animation: aws-spin 6s linear infinite;
+  }
+  .aws-glow:hover {
+    transform: translateY(-2px);
+  }
+  @keyframes aws-spin {
+    to { transform: rotate(1turn); }
+  }
+}

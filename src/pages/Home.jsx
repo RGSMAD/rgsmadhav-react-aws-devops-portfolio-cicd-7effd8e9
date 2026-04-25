@@ -212,7 +212,10 @@ function Navbar() {
       scrolled ? "bg-background/80 backdrop-blur-md border-b border-border shadow-sm" : "bg-transparent"
     }`}>
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-        <div className="font-bold text-xl tracking-tight text-primary">RGS Madhav</div>
+        <div className="font-bold text-xl tracking-tight">
+          <span className="text-blue-600 dark:text-blue-400">RGS</span>{" "}
+          <span className="text-primary">Madhav</span>
+        </div>
 
         <div className="hidden lg:flex items-center space-x-6">
           {navItems.map((item) => (
@@ -286,7 +289,7 @@ function ProjectCard({ project, index }) {
     >
       <div className={`relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] ${flipped ? "[transform:rotateY(180deg)]" : ""}`}>
         {/* FRONT */}
-        <Card className="absolute inset-0 bg-card border-border/50 shadow-sm hover:shadow-md transition-shadow [backface-visibility:hidden] [-webkit-backface-visibility:hidden]">
+        <Card className="absolute inset-0 bg-card border-border/50 shadow-sm hover:shadow-md transition-shadow [backface-visibility:hidden] [-webkit-backface-visibility:hidden] aws-glow">
           <CardContent className="p-6 h-full flex flex-col">
             <div className="flex items-start justify-between gap-3 mb-4">
               <div className="bg-primary/10 p-3 rounded-xl text-primary shrink-0"><Cloud className="w-6 h-6" /></div>
@@ -318,7 +321,7 @@ function ProjectCard({ project, index }) {
           </CardContent>
         </Card>
         {/* BACK */}
-        <Card className="absolute inset-0 bg-card border-border/50 shadow-sm [transform:rotateY(180deg)] [backface-visibility:hidden] [-webkit-backface-visibility:hidden]">
+        <Card className="absolute inset-0 bg-card border-border/50 shadow-sm [transform:rotateY(180deg)] [backface-visibility:hidden] [-webkit-backface-visibility:hidden] aws-glow">
           <CardContent className="p-6 h-full flex flex-col">
             <div className="flex items-start justify-between gap-3 mb-4">
               <div className="bg-accent/10 p-3 rounded-xl text-accent shrink-0"><Sparkles className="w-6 h-6" /></div>
@@ -367,14 +370,14 @@ function ContactSection() {
     <section id="contact" className="py-24 bg-muted/30">
       <div className="container mx-auto px-6 max-w-5xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">Get in Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-primary">Get in Touch</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             I'm open to Cloud Engineer / AWS DevOps Engineer roles. Reach out anytime.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map(({ icon: Icon, label, value, href }) => (
-            <Card key={label} className="border border-border/50 bg-card hover:border-primary/50 transition-colors">
+            <Card key={label} className="border border-border/50 bg-card hover:border-primary/50 transition-colors aws-glow">
               <CardContent className="p-6 flex items-center space-x-4">
                 <div className="p-3 bg-primary/10 rounded-full text-primary shrink-0"><Icon className="h-6 w-6" /></div>
                 <div className="min-w-0">
@@ -498,7 +501,7 @@ function ProjectsSection() {
     <section id="projects" className="py-24">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">Featured Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-primary">Featured Projects</h2>
           <div className="text-muted-foreground text-lg max-w-2xl mx-auto space-y-1">
             <p>Hands-on AWS, Terraform, and CI/CD projects built end-to-end.</p>
             <p>Tap
@@ -556,10 +559,11 @@ export default function Home() {
               </span>
               Open to Cloud Engineer / AWS DevOps Engineer roles
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground mb-4">
-              Rajoli Girisai Madhav
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4">
+              <span className="text-blue-600 dark:text-blue-400">Rajoli Girisai</span>{" "}
+              <span className="text-primary">Madhav</span>
             </h1>
-            <p className="text-xl md:text-2xl font-medium text-muted-foreground mb-6">
+            <p className="text-xl md:text-2xl font-medium text-black dark:text-white mb-6">
               AWS DevOps Engineer | Cloud & Infrastructure Specialist
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-xl">
@@ -609,7 +613,7 @@ export default function Home() {
               </div>
             </div>
 
-            <Card className="bg-card border-border/50 shadow-sm w-full max-w-md mt-4">
+            <Card className="bg-card border-border/50 shadow-sm w-full max-w-md mt-4 aws-glow">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="bg-accent/10 p-2 rounded-lg text-accent"><Sparkles className="w-5 h-5" /></div>
@@ -644,7 +648,7 @@ export default function Home() {
                   <div>
                     <div className="flex items-center gap-3 mb-3">
                       <div className="bg-primary/10 p-2 rounded-lg text-primary sm:hidden"><Target className="w-4 h-4" /></div>
-                      <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Career Objective</h2>
+                      <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-primary">Career Objective</h2>
                     </div>
                     <p className="text-base md:text-lg text-foreground/90 leading-relaxed mb-4">{CAREER_OBJECTIVE}</p>
                     <p className="text-sm md:text-[15px] text-muted-foreground leading-relaxed">{CAREER_AVAILABILITY}</p>
@@ -662,7 +666,10 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.5 }}>
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 tracking-tight">From Mainframes to the Cloud</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 tracking-tight">
+                <span className="text-blue-600 dark:text-blue-400">From Mainframes to the</span>{" "}
+                <span className="text-primary">Cloud</span>
+              </h2>
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p>I began my career in enterprise banking systems at NTT Data, working with Mainframes (COBOL, JCL), where I learned the importance of reliability, production stability, and maintaining 99.9% uptime in mission-critical environments.</p>
                 <p>Driven by a passion for modern infrastructure, I transitioned into Cloud and DevOps. I've since designed and deployed scalable AWS architectures, implemented CI/CD pipelines, and reduced deployment times to under 15 minutes through automation.</p>
@@ -671,7 +678,7 @@ export default function Home() {
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }} className="space-y-6">
-              <Card className="bg-card border-border/50 shadow-sm">
+              <Card className="bg-card border-border/50 shadow-sm aws-glow">
                 <CardContent className="p-6 flex gap-4">
                   <div className="bg-primary/10 p-3 rounded-xl h-fit"><Cloud className="w-6 h-6 text-primary" /></div>
                   <div>
@@ -680,7 +687,7 @@ export default function Home() {
                   </div>
                 </CardContent>
               </Card>
-              <Card className="bg-card border-border/50 shadow-sm">
+              <Card className="bg-card border-border/50 shadow-sm aws-glow">
                 <CardContent className="p-6 flex gap-4">
                   <div className="bg-accent/10 p-3 rounded-xl h-fit"><Settings className="w-6 h-6 text-accent" /></div>
                   <div>
@@ -689,7 +696,7 @@ export default function Home() {
                   </div>
                 </CardContent>
               </Card>
-              <Card className="bg-card border-border/50 shadow-sm">
+              <Card className="bg-card border-border/50 shadow-sm aws-glow">
                 <CardContent className="p-6 flex gap-4">
                   <div className="bg-primary/10 p-3 rounded-xl h-fit"><ShieldCheck className="w-6 h-6 text-primary" /></div>
                   <div>
@@ -707,7 +714,7 @@ export default function Home() {
       <section id="skills" className="py-24">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="mb-16 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Skills & Technologies</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-primary">Skills &amp; Technologies</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skillsData.map((category, i) => {
@@ -716,7 +723,7 @@ export default function Home() {
                 <motion.div key={category.category} initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.05 }}>
-                  <Card className="h-full bg-card border-border/50 shadow-sm hover:shadow-md transition-shadow">
+                  <Card className="h-full bg-card border-border/50 shadow-sm hover:shadow-md transition-shadow aws-glow">
                     <CardContent className="p-6">
                       <div className="flex items-center gap-3 mb-6">
                         <div className="bg-primary/10 p-2 rounded-lg text-primary"><Icon className="w-5 h-5" /></div>
@@ -740,7 +747,7 @@ export default function Home() {
       <section id="experience" className="py-24 bg-muted/30 border-y border-border/50">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="mb-16 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Experience</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-primary">Experience</h2>
           </div>
           <div className="space-y-12 md:space-y-8 relative before:absolute before:inset-0 before:ml-5 md:before:ml-0 md:before:left-1/2 before:-translate-x-px md:before:-translate-x-1/2 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
             {experiences.map((exp, i) => {
@@ -782,7 +789,7 @@ export default function Home() {
           </div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }} className="mt-12">
-            <Card className="bg-card border-border/50 shadow-sm">
+            <Card className="bg-card border-border/50 shadow-sm aws-glow">
               <CardContent className="p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="bg-accent/10 p-2 rounded-lg text-accent"><Trophy className="w-5 h-5" /></div>
@@ -809,8 +816,8 @@ export default function Home() {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-              <h2 className="text-2xl font-bold mb-8 tracking-tight">Education</h2>
-              <Card className="bg-card border-border/50 shadow-sm h-full">
+              <h2 className="text-2xl font-bold mb-8 tracking-tight text-primary">Education</h2>
+              <Card className="bg-card border-border/50 shadow-sm h-full aws-glow">
                 <CardContent className="p-6 md:p-8 flex flex-col justify-center h-full">
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold mb-2">B.Tech in Electrical and Electronics Engineering</h3>
@@ -824,14 +831,14 @@ export default function Home() {
               </Card>
             </div>
             <div id="certifications">
-              <h2 className="text-2xl font-bold mb-8 tracking-tight">Certifications & Awards</h2>
+              <h2 className="text-2xl font-bold mb-8 tracking-tight text-primary">Certifications &amp; Awards</h2>
               <div className="grid gap-4">
                 {certifications.map((cert, i) => {
                   const Icon = cert.icon;
                   return (
                     <motion.div key={i} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.1 }}>
-                      <Card className="bg-card border-border/50 shadow-sm hover:border-primary/30 transition-colors">
+                      <Card className="bg-card border-border/50 shadow-sm hover:border-primary/30 transition-colors aws-glow">
                         <CardContent className="p-5 flex items-center gap-4">
                           <div className="bg-primary/10 p-3 rounded-full shrink-0"><Icon className="w-6 h-6 text-primary" /></div>
                           <div>
