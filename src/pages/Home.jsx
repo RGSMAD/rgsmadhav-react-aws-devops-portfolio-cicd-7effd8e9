@@ -370,7 +370,7 @@ function ContactSection() {
     <section id="contact" className="py-24 bg-muted/30">
       <div className="container mx-auto px-6 max-w-5xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">Get in Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-primary">Get in Touch</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             I'm open to Cloud Engineer / AWS DevOps Engineer roles. Reach out anytime.
           </p>
@@ -501,7 +501,7 @@ function ProjectsSection() {
     <section id="projects" className="py-24">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">Featured Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-primary">Featured Projects</h2>
           <div className="text-muted-foreground text-lg max-w-2xl mx-auto space-y-1">
             <p>Hands-on AWS, Terraform, and CI/CD projects built end-to-end.</p>
             <p>Tap
@@ -648,7 +648,7 @@ export default function Home() {
                   <div>
                     <div className="flex items-center gap-3 mb-3">
                       <div className="bg-primary/10 p-2 rounded-lg text-primary sm:hidden"><Target className="w-4 h-4" /></div>
-                      <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Career Objective</h2>
+                      <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-primary">Career Objective</h2>
                     </div>
                     <p className="text-base md:text-lg text-foreground/90 leading-relaxed mb-4">{CAREER_OBJECTIVE}</p>
                     <p className="text-sm md:text-[15px] text-muted-foreground leading-relaxed">{CAREER_AVAILABILITY}</p>
@@ -714,7 +714,7 @@ export default function Home() {
       <section id="skills" className="py-24">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="mb-16 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Skills & Technologies</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-primary">Skills &amp; Technologies</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skillsData.map((category, i) => {
@@ -747,7 +747,7 @@ export default function Home() {
       <section id="experience" className="py-24 bg-muted/30 border-y border-border/50">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="mb-16 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Experience</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-primary">Experience</h2>
           </div>
           <div className="space-y-12 md:space-y-8 relative before:absolute before:inset-0 before:ml-5 md:before:ml-0 md:before:left-1/2 before:-translate-x-px md:before:-translate-x-1/2 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
             {experiences.map((exp, i) => {
@@ -816,7 +816,7 @@ export default function Home() {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-              <h2 className="text-2xl font-bold mb-8 tracking-tight">Education</h2>
+              <h2 className="text-2xl font-bold mb-8 tracking-tight text-primary">Education</h2>
               <Card className="bg-card border-border/50 shadow-sm h-full">
                 <CardContent className="p-6 md:p-8 flex flex-col justify-center h-full">
                   <div className="mb-6">
@@ -831,7 +831,7 @@ export default function Home() {
               </Card>
             </div>
             <div id="certifications">
-              <h2 className="text-2xl font-bold mb-8 tracking-tight">Certifications & Awards</h2>
+              <h2 className="text-2xl font-bold mb-8 tracking-tight text-primary">Certifications &amp; Awards</h2>
               <div className="grid gap-4">
                 {certifications.map((cert, i) => {
                   const Icon = cert.icon;
