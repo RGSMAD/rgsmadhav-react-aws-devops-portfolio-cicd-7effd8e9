@@ -212,7 +212,10 @@ function Navbar() {
       scrolled ? "bg-background/80 backdrop-blur-md border-b border-border shadow-sm" : "bg-transparent"
     }`}>
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-        <div className="font-bold text-xl tracking-tight text-primary">RGS Madhav</div>
+        <div className="font-bold text-xl tracking-tight">
+          <span className="text-blue-600 dark:text-blue-400">RGS</span>{" "}
+          <span className="text-primary">Madhav</span>
+        </div>
 
         <div className="hidden lg:flex items-center space-x-6">
           {navItems.map((item) => (
