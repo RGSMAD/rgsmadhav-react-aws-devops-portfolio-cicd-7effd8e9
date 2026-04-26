@@ -560,7 +560,7 @@ export default function Home() {
               Open to Cloud Engineer / AWS DevOps Engineer roles
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4">
-              <span className="text-blue-600 dark:text-blue-400">Rajoli Girisai</span>{" "}
+              <span className="text-teal-700 dark:text-teal-300">Rajoli Girisai</span>{" "}
               <span className="text-primary">Madhav</span>
             </h1>
             <p className="text-xl md:text-2xl font-medium text-black dark:text-white mb-6">
@@ -667,10 +667,10 @@ export default function Home() {
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.5 }}>
               <h2 className="text-3xl md:text-4xl font-bold mb-8 tracking-tight">
-                <span className="text-blue-600 dark:text-blue-400">From Mainframes to the</span>{" "}
+                <span className="text-black dark:text-white">From Mainframes to the</span>{" "}
                 <span className="text-primary">Cloud</span>
               </h2>
-              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <div className="space-y-6 text-lg text-black dark:text-white leading-relaxed">
                 <p>I began my career in enterprise banking systems at NTT Data, working with Mainframes (COBOL, JCL), where I learned the importance of reliability, production stability, and maintaining 99.9% uptime in mission-critical environments.</p>
                 <p>Driven by a passion for modern infrastructure, I transitioned into Cloud and DevOps. I've since designed and deployed scalable AWS architectures, implemented CI/CD pipelines, and reduced deployment times to under 15 minutes through automation.</p>
                 <p>Today, I focus on building secure, high-availability systems using AWS and Terraform — combining the discipline of mainframe-era reliability with the agility of cloud-native engineering.</p>
