@@ -78,42 +78,50 @@
   }
 }
 
-/* AWS rainbow glow on hover — used for feature/skill/project/cert/contact cards */
+/* AWS rainbow border on hover + magnify — matches the rainbow strip on Career Objective card */
 @layer utilities {
   .aws-glow {
     position: relative;
     isolation: isolate;
-    transition: transform 0.3s ease;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
   }
   .aws-glow::before {
     content: "";
     position: absolute;
-    inset: -2px;
+    inset: 0;
     z-index: -1;
     border-radius: inherit;
     padding: 2px;
-    background: conic-gradient(
-      from 0deg,
-      #FF9900,   /* AWS orange */
-      #8C4FFF,   /* purple */
-      #00A1C9,   /* AWS teal/blue */
-      #1F8EFA,   /* azure */
-      #59BA47,   /* green */
-      #EC7211,   /* deep orange */
-      #FF9900
+    background: linear-gradient(
+      90deg,
+      #FF9900 0%,
+      #EC7211 16%,
+      #8C4FFF 33%,
+      #1F8EFA 50%,
+      #00A1C9 66%,
+      #59BA47 83%,
+      #FF9900 100%
     );
+    background-size: 300% 100%;
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
     opacity: 0;
-    filter: blur(10px);
-    transition: opacity 0.4s ease;
+    transition: opacity 0.35s ease;
   }
   .aws-glow:hover::before {
-    opacity: 0.85;
-    animation: aws-spin 6s linear infinite;
+    opacity: 1;
+    animation: aws-slide 4s linear infinite;
   }
   .aws-glow:hover {
-    transform: translateY(-2px);
+    transform: scale(1.04);
+    box-shadow: 0 10px 30px -10px rgba(140, 79, 255, 0.25);
+    z-index: 1;
   }
-  @keyframes aws-spin {
-    to { transform: rotate(1turn); }
+  @keyframes aws-slide {
+    from { background-position: 0% 50%; }
+    to   { background-position: 300% 50%; }
   }
 }
