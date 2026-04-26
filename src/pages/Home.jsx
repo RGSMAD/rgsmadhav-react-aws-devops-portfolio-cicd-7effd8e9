@@ -213,7 +213,7 @@ function Navbar() {
     }`}>
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
         <div className="font-bold text-xl tracking-tight">
-          <span className="text-blue-600 dark:text-blue-400">RGS</span>{" "}
+          <span className="text-orange-500 dark:text-orange-400">RGS</span>{" "}
           <span className="text-primary">Madhav</span>
         </div>
 
@@ -560,7 +560,7 @@ export default function Home() {
               Open to Cloud Engineer / AWS DevOps Engineer roles
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4">
-              <span className="text-emerald-700 dark:text-emerald-400">Rajoli Girisai</span>{" "}
+              <span className="text-rose-600 dark:text-rose-400">Rajoli Girisai</span>{" "}
               <span className="text-primary">Madhav</span>
             </h1>
             <p className="text-xl md:text-2xl font-medium text-black dark:text-white mb-6">
