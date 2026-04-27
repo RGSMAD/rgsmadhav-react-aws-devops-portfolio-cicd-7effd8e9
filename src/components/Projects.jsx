@@ -68,17 +68,14 @@ const ProjectCard = ({ p }) => {
 
   return (
     <div
-      className={`group [perspective:1200px] ${hasBack ? "cursor-pointer" : ""}`}
+      className={`flip-card group ${hasBack ? "cursor-pointer" : ""}`}
       onClick={() => hasBack && setFlipped((f) => !f)}
     >
-      <div
-        className={`relative w-full transition-transform duration-700 [transform-style:preserve-3d] ${
-          flipped ? "[transform:rotateY(180deg)]" : ""
-        }`}
-        style={{ minHeight: "480px" }}
-      >
+      <div className={`flip-card-inner ${flipped ? "is-flipped" : ""}`}>
         {/* Front */}
-        <div className={`glass-card ${p.frontTint} p-6 rounded-2xl flex flex-col hover:shadow-glow transition-all hover:-translate-y-1 absolute inset-0 [backface-visibility:hidden]`}>
+        <div className={`flip-card-face flip-card-front glass-card ${p.frontTint} p-6 rounded-2xl flex flex-col hover:shadow-glow transition-shadow`}>
+
+
           <div className="w-14 h-14 rounded-2xl bg-gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-glow">
             <p.icon className="w-7 h-7 text-primary-foreground" />
           </div>
@@ -136,7 +133,7 @@ const ProjectCard = ({ p }) => {
 
         {/* Back */}
         {hasBack && (
-          <div className={`glass-card ${p.backTint} p-6 rounded-2xl absolute inset-0 [transform:rotateY(180deg)] [backface-visibility:hidden] overflow-auto`}>
+          <div className={`flip-card-face flip-card-back glass-card ${p.backTint} p-6 rounded-2xl overflow-y-auto`}>
             <h3 className="font-display font-bold text-lg mb-3">{p.title}</h3>
             <ul className="space-y-2 text-sm text-foreground/90">
               {p.details.map((d) => (

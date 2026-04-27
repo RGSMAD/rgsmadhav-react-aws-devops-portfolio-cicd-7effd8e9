@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { memo, useCallback, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Cloud, Code, Database, Linkedin, Github, ShieldCheck, TerminalSquare,
@@ -279,21 +279,36 @@ function RotatingImpact() {
 
 /* ================= PROJECT CARD ================= */
 
-function ProjectCard({ project, index }) {
+const ProjectCard = memo(function ProjectCard({ project, index }) {
   const [flipped, setFlipped] = useState(false);
+
+  const showDetails = useCallback((event) => {
+    event.stopPropagation();
+    setFlipped(true);
+  }, []);
+
+  const showFront = useCallback((event) => {
+    event.stopPropagation();
+    setFlipped(false);
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="h-[460px] [perspective:1500px]"
+      className="project-flip-motion"
     >
-      <div className={`relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] ${flipped ? "[transform:rotateY(180deg)]" : ""}`}>
-        {/* FRONT */}
-        <Card className="absolute inset-0 bg-card border-border/50 shadow-sm hover:shadow-md transition-shadow [backface-visibility:hidden] [-webkit-backface-visibility:hidden] aws-glow">
+      <div className="project-flip-shell" aria-live="polite">
+        <div className={`project-flip-inner${flipped ? " project-flip-inner--flipped" : ""}`}>
+          {/* FRONT */}
+          <Card
+            aria-hidden={flipped}
+            className={`project-flip-face project-flip-face--front project-flip-glow rounded-2xl bg-card border-border/50 shadow-sm ${flipped ? "project-flip-face--inactive" : "project-flip-face--active"}`}
+          >
           <CardContent className="p-6 h-full flex flex-col">
             <div className="flex items-start justify-between gap-3 mb-4">
               <div className="bg-primary/10 p-3 rounded-xl text-primary shrink-0"><Cloud className="w-6 h-6" /></div>
-              <button type="button" onClick={() => setFlipped(true)}
+              <button type="button" onClick={showDetails} aria-pressed={flipped}
                 className="text-xs font-medium text-muted-foreground hover:text-primary inline-flex items-center gap-1.5 transition-colors">
                 <RotateCw className="w-3.5 h-3.5" />Details
               </button>
@@ -313,19 +328,22 @@ function ProjectCard({ project, index }) {
                   </a>
                 </Button>
               ) : (
-                <Button variant="outline" className="w-full gap-2" onClick={() => setFlipped(true)}>
+                <Button variant="outline" className="w-full gap-2" onClick={showDetails}>
                   <Sparkles className="w-4 h-4" />See project details
                 </Button>
               )}
             </div>
           </CardContent>
-        </Card>
-        {/* BACK */}
-        <Card className="absolute inset-0 bg-card border-border/50 shadow-sm [transform:rotateY(180deg)] [backface-visibility:hidden] [-webkit-backface-visibility:hidden] aws-glow">
+          </Card>
+          {/* BACK */}
+          <Card
+            aria-hidden={!flipped}
+            className={`project-flip-face project-flip-face--back project-flip-glow rounded-2xl bg-card border-border/50 shadow-sm ${flipped ? "project-flip-face--active" : "project-flip-face--inactive"}`}
+          >
           <CardContent className="p-6 h-full flex flex-col">
             <div className="flex items-start justify-between gap-3 mb-4">
               <div className="bg-accent/10 p-3 rounded-xl text-accent shrink-0"><Sparkles className="w-6 h-6" /></div>
-              <button type="button" onClick={() => setFlipped(false)}
+              <button type="button" onClick={showFront} aria-pressed={!flipped}
                 className="text-xs font-medium text-muted-foreground hover:text-primary inline-flex items-center gap-1.5 transition-colors">
                 <RotateCw className="w-3.5 h-3.5 -scale-x-100" />Back
               </button>
@@ -349,11 +367,12 @@ function ProjectCard({ project, index }) {
               </div>
             )}
           </CardContent>
-        </Card>
+          </Card>
+        </div>
       </div>
     </motion.div>
   );
-}
+});
 
 /* ================= CONTACT SECTION ================= */
 
